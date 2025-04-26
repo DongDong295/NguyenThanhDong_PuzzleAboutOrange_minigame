@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LevelObject
+  m_EditorClassIdentifier: 
+  m_GroupName: LevelObject
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bb434a5d2aa676347a4bc5c4fe0f5dc0
+  m_SerializeEntries:
+  - m_GUID: 07dd9a63c104c1047b12782aa3be4d0f
+    m_Address: puzzle-piece-2-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f6fccf1458c8534bbebb3e34fe8f2ba
+    m_Address: puzzle-piece-3-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1047b89f1e493d4439558003c4849f02
+    m_Address: puzzle-piece-0-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59d1e89506c7ca8489ba596d53ed5d75
+    m_Address: puzzle-piece-1-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64d0a76027c48d6488d8ad9d9e9c7d10
+    m_Address: node-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9762673c8642ae741b2d747a3486059f
+    m_Address: board-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f136440a317f72a4a8190f07c465b3da
+    m_Address: level-background-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 3c706759bde2b76488861e86bc9f59f1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a4047800c1f8ecf4e972bd325489d06f, type: 2}
+    - {fileID: 11400000, guid: 6730f507483f90a4d9d54ca5dbdd0cd6, type: 2}
