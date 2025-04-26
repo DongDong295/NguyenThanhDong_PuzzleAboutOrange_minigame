@@ -25,6 +25,8 @@ public class LevelManager : MonoBehaviour, IManager
 
     private GameObject _board;
 
+    private List<GameObject> _disposeList;
+
     public async UniTask OnApplicationStart()
     {
         await UniTask.CompletedTask;
@@ -32,12 +34,13 @@ public class LevelManager : MonoBehaviour, IManager
 
     public async UniTask OnEnterLevel()
     {
+        _disposeList = new List<GameObject>();
+        await CreateBoard();
         await UniTask.CompletedTask;
     }
 
     public void Start()
     {
-        CreateBoard().Forget();
     }
 
     void Update()
@@ -71,6 +74,7 @@ public class LevelManager : MonoBehaviour, IManager
 
         await LoadLevelBackground();
         await LoadBoardVisual(offset);
+        await LoadBlock();
         await PlacePuzzle();
     }
 
@@ -78,24 +82,51 @@ public class LevelManager : MonoBehaviour, IManager
     {
         _canMove = false;
         InputCooldown().Forget();
-        var objects = _puzzlePieces.OrderBy(b => b.Position.x).ThenBy(b => b.Position.y).ToList();
-        if (moveDir == Vector2.right || moveDir == Vector2.up) objects.Reverse();
 
-        foreach (var o in objects)
+        var objects = _puzzlePieces.OrderBy(b => b.Position.x).ThenBy(b => b.Position.y).ToList();
+        if (moveDir == Vector2.right || moveDir == Vector2.up)
+            objects.Reverse();
+
+        foreach (var puzzle in objects)
         {
-            var next = o.Node;
-            do
+            var currentNode = puzzle.Node;
+            var nextNode = GetNodePosition(currentNode.Position + moveDir);
+            if (nextNode != null && nextNode.OccupiedObject == null)
             {
-                o.SetBlock(next);
-                var possibleNode = GetNodePosition(next.Position + moveDir);
-                if (possibleNode != null)
-                {
-                    if (possibleNode.OccupiedObject == null)
-                        next = possibleNode;
-                }
-            } while (next != o.Node);
-            o.transform.DOMove(o.Node.transform.position, 0.3f);
+                currentNode.OccupiedObject = null;
+                puzzle.Node = nextNode;
+                nextNode.OccupiedObject = puzzle;
+                puzzle.transform.DOMove(nextNode.transform.position, 0.3f);
+            }
         }
+        if (CheckWin())
+        {
+            Debug.Log("Work!");
+        }
+        else
+        {
+            Debug.Log("Nuh uh");
+        }
+    }
+
+    private bool CheckAnchor(Puzzle anchor, Vector2 dir, Puzzle expectedNeighbor)
+    {
+        var neighborNode = GetNodePosition(anchor.Node.Position + dir);
+        Debug.Log(anchor + " " + neighborNode);
+        return neighborNode != null && neighborNode.OccupiedObject == expectedNeighbor;
+    }
+
+    private bool CheckWin()
+    {
+        var piece1 = _puzzlePieces[0];
+        var piece2 = _puzzlePieces[1];
+        var piece3 = _puzzlePieces[2];
+        var piece4 = _puzzlePieces[3];
+
+        return CheckAnchor(piece1, Vector2.right, piece2) &&
+            CheckAnchor(piece1, Vector2.up, piece3) &&
+            CheckAnchor(piece4, Vector2.left, piece3) &&
+            CheckAnchor(piece4, Vector2.down, piece2);
     }
 
     private async UniTask InputCooldown()
@@ -118,6 +149,21 @@ public class LevelManager : MonoBehaviour, IManager
         board.transform.SetParent(_board.transform);
     }
 
+    private async UniTask LoadBlock()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            var freeNode = _levelNodes.Where(n => n.OccupiedObject == null).ToList();
+            var block = await LoadLevelObject("block-prefab");
+            var targetNode = freeNode[Random.Range(0, freeNode.Count)];
+            block.transform.position = targetNode.Position;
+            var blockPiece = block.GetComponent<Block>();
+            targetNode.OccupiedObject = blockPiece;
+            blockPiece.InitializeBlock(targetNode);
+            blockPiece.transform.SetParent(_board.transform);
+        }
+    }
+
     private async UniTask PlacePuzzle()
     {
         _puzzlePieces = new List<Puzzle>();
@@ -132,7 +178,7 @@ public class LevelManager : MonoBehaviour, IManager
             var puzzlePiece = piece.GetComponent<Puzzle>();
             targetNode.OccupiedObject = puzzlePiece;
             _puzzlePieces.Add(piece.GetComponent<Puzzle>());
-            puzzlePiece.Node = targetNode;
+            puzzlePiece.Initialize(targetNode);
             piece.transform.SetParent(_board.transform);
         }
     }

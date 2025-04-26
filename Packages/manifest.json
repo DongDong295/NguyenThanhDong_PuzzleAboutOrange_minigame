@@ -47,7 +47,8 @@
     "org.nuget.system.runtime.compilerservices.unsafe": "6.1.2",
     "com.cysharp.unitask": "2.5.10",
     "com.zbase.collections.pooled": "2.8.4",
-    "com.zbase.foundation": "1.0.6"
+    "com.zbase.foundation": "1.0.6",
+    "com.zbase.foundation.pubsub": "1.5.1"
   },
   "scopedRegistries": [
     {
@@ -59,6 +60,7 @@
         "com.zbase.csv-reader",
         "com.zbase.foundation",
         "com.zbase.foundation.pooling",
+        "com.zbase.foundation.pubsub",
         "com.zbase.unityscreennavigator",
         "org.nuget.system.runtime.compilerservices.unsafe"
       ]

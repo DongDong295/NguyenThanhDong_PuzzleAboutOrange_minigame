@@ -35,6 +35,7 @@ MonoBehaviour:
     - com.zbase.csv-reader
     - com.zbase.foundation
     - com.zbase.foundation.pooling
+    - com.zbase.foundation.pubsub
     - com.zbase.unityscreennavigator
     - org.nuget.system.runtime.compilerservices.unsafe
     m_IsDefault: 0
