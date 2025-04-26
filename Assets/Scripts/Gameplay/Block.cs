@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Block : BoardObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public Vector2 Position => transform.position;
+    public Node Node;
 
+    public void InitializeBlock(Node node)
+    {
+        Node = node;
+        SpawnAnimation();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void SpawnAnimation()
     {
-
+        var baseScale = transform.localScale;
+        transform.localScale = Vector3.zero;
+        transform.DOScale(baseScale, 0.4f)
+            .SetEase(Ease.OutBack); // you can tweak the ease for nicer feel
     }
 }

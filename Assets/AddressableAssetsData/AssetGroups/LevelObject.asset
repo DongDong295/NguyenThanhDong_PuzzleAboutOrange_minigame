@@ -47,6 +47,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4b2e616dc2c0e249a794a88273f3c8b
+    m_Address: block-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f136440a317f72a4a8190f07c465b3da
     m_Address: level-background-prefab
     m_ReadOnly: 0

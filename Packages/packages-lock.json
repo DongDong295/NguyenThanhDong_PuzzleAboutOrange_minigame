@@ -283,6 +283,18 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.zbase.foundation.pubsub": {
+      "version": "1.5.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "org.nuget.system.runtime.compilerservices.unsafe": "6.0.0",
+        "com.cysharp.unitask": "2.3.3",
+        "com.zbase.collections.pooled": "2.8.4",
+        "com.zbase.foundation": "1.0.5"
+      },
+      "url": "https://package.openupm.com"
+    },
     "com.zbase.unityscreennavigator": {
       "version": "1.6.9",
       "depth": 0,
