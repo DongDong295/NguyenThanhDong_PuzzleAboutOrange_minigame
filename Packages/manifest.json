@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.addressables": "1.22.3",
     "com.unity.collab-proxy": "2.7.1",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.31",
@@ -39,6 +40,30 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
-  }
+    "com.unity.modules.xr": "1.0.0",
+    "com.zbase.unityscreennavigator": "1.6.9",
+    "com.zbase.csv-reader": "2.2.0",
+    "com.zbase.foundation.pooling": "2.3.3",
+    "org.nuget.system.runtime.compilerservices.unsafe": "6.1.2",
+    "com.cysharp.unitask": "2.5.10",
+    "com.zbase.collections.pooled": "2.8.4",
+    "com.zbase.foundation": "1.0.6",
+    "com.zbase.foundation.pubsub": "1.5.1"
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.cysharp.unitask",
+        "com.zbase.collections.pooled",
+        "com.zbase.csv-reader",
+        "com.zbase.foundation",
+        "com.zbase.foundation.pooling",
+        "com.zbase.foundation.pubsub",
+        "com.zbase.unityscreennavigator",
+        "org.nuget.system.runtime.compilerservices.unsafe"
+      ]
+    }
+  ]
 }
