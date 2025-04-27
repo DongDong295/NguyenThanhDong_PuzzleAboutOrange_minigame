@@ -348,7 +348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783631937}
-  - component: {fileID: 1783631938}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -371,18 +370,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 942244808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1783631938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783631936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a86dab703beff4db9740a750b2408a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1830853426
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,8 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e94250c47cf4a46af24614b7fbd88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 4
-  _height: 4
   _puzzlePieces:
   - {fileID: 1584810948482021830, guid: 1047b89f1e493d4439558003c4849f02, type: 3}
   - {fileID: 2709519964915471305, guid: 59d1e89506c7ca8489ba596d53ed5d75, type: 3}

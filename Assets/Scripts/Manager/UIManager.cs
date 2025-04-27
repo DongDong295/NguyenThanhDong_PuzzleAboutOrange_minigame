@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour, IManager
     private bool _isShowingScreen = false;
     public async UniTask OnApplicationStart()
     {
-        Debug.Log("CC");
         _subscription = new List<ISubscription>();
         _subscription.Add(Pubsub.Subscriber.Scope<UIScope>().Subscribe<ShowScreenEvent>(OnShowScreen));
         _subscription.Add(Pubsub.Subscriber.Scope<UIScope>().Subscribe<ShowModalEvent>(OnShowModal));
@@ -65,13 +64,17 @@ public class UIManager : MonoBehaviour, IManager
 
     public async void OnShowModal(ShowModalEvent e)
     {
+        var modalContainer = ScreenLauncher.ContainerManager.Find<ModalContainer>();
+
         var options = new ModalOptions(e.Path, true, loadAsync: e.LoadAsync);
-        await ScreenLauncher.ContainerManager.Find<ModalContainer>().PushAsync(options);
+
+        await modalContainer.PushAsync(options, e.Args);
     }
 
     public async UniTask OnCloseModal(CloseModalEvent e, bool isPlayAnim)
     {
-        await ScreenLauncher.ContainerManager.Find<ModalContainer>().PopAsync(isPlayAnim);
+        if (GetCurrentModal() != null)
+            await ScreenLauncher.ContainerManager.Find<ModalContainer>().PopAsync(isPlayAnim);
     }
 
     public Modal GetCurrentModal()

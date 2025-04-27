@@ -339,7 +339,7 @@ MonoBehaviour:
   _identifier: 
   _rectTransform: {fileID: 0}
   _canvasGroup: {fileID: -3391798165948509437}
-  _renderingOrder: 0
+  _renderingOrder: 999
   _animationContainer:
     _pushEnterAnimations: []
     _pushExitAnimations: []

@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5215459748994801340}
   - component: {fileID: 1106935330356770236}
-  - component: {fileID: -9051205453311051680}
+  - component: {fileID: 8410634127320894054}
   m_Layer: 5
   m_Name: ui-gameplay-screen
   m_TagString: Untagged
@@ -418,7 +418,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &-9051205453311051680
+--- !u!114 &8410634127320894054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,20 +427,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5675908069261212242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb9b38cbfd7f6d47917253c40395378, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b3a3668fcd2324439f73829885c2775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _dontAddCanvasGroupAutomatically: 0
   _usePrefabNameAsIdentifier: 1
   _identifier: 
   _rectTransform: {fileID: 0}
-  _canvasGroup: {fileID: 0}
+  _canvasGroup: {fileID: 1106935330356770236}
   _renderingOrder: 0
   _animationContainer:
     _pushEnterAnimations: []
     _pushExitAnimations: []
     _popEnterAnimations: []
     _popExitAnimations: []
+  _timeDisplay: {fileID: 6791803302521229168}
+  _homeButton: {fileID: 7477656614281113968}
+  _resetButton: {fileID: 2171679854396948325}
 --- !u!1 &6308596161514423074
 GameObject:
   m_ObjectHideFlags: 0

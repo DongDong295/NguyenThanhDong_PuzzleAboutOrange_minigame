@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d0debb65243f8684f8d90a5bb4926a18
   m_SerializeEntries:
+  - m_GUID: 12ceff6ad3e54044cbb4d0fbab964e55
+    m_Address: level-button-prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 258480f6590a37043b02113a865aad86
     m_Address: ui-main-menu-screen
     m_ReadOnly: 0
@@ -24,6 +29,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e03147b57d395a4bbe1ab6ec10c5f04
     m_Address: ui-select-level-screen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33c28d82cdcecf54c9244e605a6dc1ed
+    m_Address: ui-finish-level-lose-modal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 374d01822ba514945939483cb861c6b1
+    m_Address: ui-finish-level-win-modal
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

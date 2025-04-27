@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfcb35e724a2eb448d2d908cba6c8b5, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: LevelDataItems
+      Entry: 7
+      Data: 0|LevelDataItem[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 1|LevelDataItem, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 1
+    - Name: boardWidth
+      Entry: 3
+      Data: 4
+    - Name: boardHeight
+      Entry: 3
+      Data: 4
+    - Name: numberOfBlock
+      Entry: 3
+      Data: 3
+    - Name: levelTime
+      Entry: 4
+      Data: 45
+    - Name: oneStarTime
+      Entry: 4
+      Data: 15
+    - Name: twoStarTime
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|LevelDataItem, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 2
+    - Name: boardWidth
+      Entry: 3
+      Data: 5
+    - Name: boardHeight
+      Entry: 3
+      Data: 4
+    - Name: numberOfBlock
+      Entry: 3
+      Data: 4
+    - Name: levelTime
+      Entry: 4
+      Data: 45
+    - Name: oneStarTime
+      Entry: 4
+      Data: 15
+    - Name: twoStarTime
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|LevelDataItem, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: boardWidth
+      Entry: 3
+      Data: 4
+    - Name: boardHeight
+      Entry: 3
+      Data: 6
+    - Name: numberOfBlock
+      Entry: 3
+      Data: 5
+    - Name: levelTime
+      Entry: 4
+      Data: 45
+    - Name: oneStarTime
+      Entry: 4
+      Data: 15
+    - Name: twoStarTime
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

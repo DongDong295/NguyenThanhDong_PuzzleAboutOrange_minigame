@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using ZBase.Foundation.Singletons;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,12 +25,12 @@ public class GameManager : MonoBehaviour
     private async UniTask InitiateManagers()
     {
         var managers = _managerHolder.GetComponentsInChildren<IManager>();
-        Debug.Log(managers.Length);
         foreach (var manager in managers)
         {
             Debug.Log(manager);
             await manager.OnApplicationStart();
         }
-        //Pubsub.Publisher.Scope<UIScope>().Publish(new ShowScreenEvent(Constants.UI.MAIN_MENU_SCREEN, false));
+        Singleton.Of<DataManager>().Initiate();
+        Pubsub.Publisher.Scope<UIScope>().Publish(new ShowScreenEvent(Constants.UI.MAIN_MENU_SCREEN, false));
     }
 }
