@@ -26,7 +26,7 @@ MonoBehaviour:
       Data: 0|LevelDataItem[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 7
       Data: 1|LevelDataItem, Assembly-CSharp
@@ -102,6 +102,60 @@ MonoBehaviour:
     - Name: oneStarTime
       Entry: 4
       Data: 15
+    - Name: twoStarTime
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|LevelDataItem, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 4
+    - Name: boardWidth
+      Entry: 3
+      Data: 5
+    - Name: boardHeight
+      Entry: 3
+      Data: 5
+    - Name: numberOfBlock
+      Entry: 3
+      Data: 4
+    - Name: levelTime
+      Entry: 4
+      Data: 45
+    - Name: oneStarTime
+      Entry: 4
+      Data: 15
+    - Name: twoStarTime
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|LevelDataItem, Assembly-CSharp
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: boardWidth
+      Entry: 3
+      Data: 4
+    - Name: boardHeight
+      Entry: 3
+      Data: 4
+    - Name: numberOfBlock
+      Entry: 3
+      Data: 3
+    - Name: levelTime
+      Entry: 4
+      Data: 45
+    - Name: oneStarTime
+      Entry: 4
+      Data: 20
     - Name: twoStarTime
       Entry: 4
       Data: 30
