@@ -60,6 +60,7 @@ public class LevelManager : MonoBehaviour, IManager
         {
             await CreateBoard(e.Data);
         }
+        _canMove = true;
         StartCoundownLevel().Forget();
         await UniTask.CompletedTask;
     }
@@ -224,7 +225,7 @@ public class LevelManager : MonoBehaviour, IManager
 
     private async UniTask InputCooldown()
     {
-        await UniTask.WaitForSeconds(_inputDelay);
+        await UniTask.WaitForSeconds(_inputDelay, cancellationToken: _cts.Token);
         _canMove = true;
     }
 
@@ -296,6 +297,7 @@ public class LevelManager : MonoBehaviour, IManager
     private void FinishLevel(bool isWin)
     {
         _cts?.Cancel();
+        _canMove = false;
         int stars = 1;
         if (isWin)
         {

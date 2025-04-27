@@ -26,19 +26,38 @@ public class GameplayScreen : ZBase.UnityScreenNavigator.Core.Screens.Screen
     }
     public override void DidPushEnter(Memory<object> args)
     {
-        var data = _manager.GetCurrentLevelData();
-        _resetButton.onClick.AddListener(() => Pubsub.Publisher.Scope<GameplayScope>().Publish(new OnEnterLevel(data)));
+        _resetButton.onClick.AddListener(() => Pubsub.Publisher.Scope<GameplayScope>().Publish(new OnEnterLevel(_manager.GetCurrentLevelData())));
         DisplayTime().Forget();
     }
 
     public async UniTask DisplayTime()
     {
         var manager = SingleBehaviour.Of<LevelManager>();
+        bool isLastTenSeconds = false;
+
         while (manager.GetLevelTime() >= 0)
         {
-            _timeDisplay.text = "0:" + manager.GetLevelTime().ToString();
-            await UniTask.Yield();
+            int timeLeft = (int)manager.GetLevelTime();
+            _timeDisplay.text = "0:" + timeLeft.ToString();
+
+            if (timeLeft <= 10)
+            {
+                if (!isLastTenSeconds)
+                {
+                    isLastTenSeconds = true;
+                }
+                AnimateTimer();
+            }
+
+            await UniTask.Delay(1000);
         }
+    }
+
+    private void AnimateTimer()
+    {
+        _timeDisplay.transform.DOKill();
+        _timeDisplay.transform.localScale = Vector3.one * 1.5f;
+        _timeDisplay.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
     }
 
     public override UniTask Cleanup(Memory<object> args)

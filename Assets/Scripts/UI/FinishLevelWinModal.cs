@@ -22,10 +22,21 @@ public class FinishLevelWinModal : Modal
 
     private int _stars;
     private bool _isWin;
+
+    private List<Image> _starIcons;
     public override async UniTask Initialize(Memory<object> args)
     {
+        _starIcons = new List<Image>();
         _stars = (int)args.Span[0];
         _isWin = (bool)args.Span[1];
+
+        _starIcons = _starsHolder.GetComponentsInChildren<Image>().ToList();
+
+        foreach (var s in _starIcons)
+        {
+            s.transform.localScale = Vector3.zero;
+        }
+
         var levelManager = SingleBehaviour.Of<LevelManager>();
         var dataManager = Singleton.Of<DataManager>();
         var levelData = await dataManager.Load<LevelData>("level-config-data");
@@ -64,26 +75,26 @@ public class FinishLevelWinModal : Modal
 
     private async UniTask UpdateVisual()
     {
-        var starIcons = _starsHolder.GetComponentsInChildren<Image>().ToList();
-        for (int i = 0; i < starIcons.Count; i++)
+        for (int i = 0; i < _starIcons.Count; i++)
         {
             if (i < _stars)
             {
-                starIcons[i].sprite = _goldStarSprite;
+                _starIcons[i].sprite = _goldStarSprite;
             }
             else
             {
-                starIcons[i].sprite = _blackStarSprite;
+                _starIcons[i].sprite = _blackStarSprite;
             }
             var sequence = DOTween.Sequence();
-            starIcons[i].transform.localScale = Vector3.one * 3;
-            sequence.Append(starIcons[i].transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack));
+            _starIcons[i].transform.localScale = Vector3.one * 3;
+            sequence.Append(_starIcons[i].transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack));
             await UniTask.WaitForSeconds(0.2f);
         }
     }
 
     public override UniTask Cleanup(Memory<object> args)
     {
+        _starIcons.Clear();
         _nextLevelButton.onClick.RemoveAllListeners();
         _homeButton.onClick.RemoveAllListeners();
         _replayButton.onClick.RemoveAllListeners();
