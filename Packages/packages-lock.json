@@ -7,6 +7,13 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
+    "com.sabresaurus.playerprefseditor": {
+      "version": "https://github.com/sabresaurus/PlayerPrefsEditor.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "710e074d16ed1c7f2fefa7f8e7912a05ecf25969"
+    },
     "com.unity.2d.animation": {
       "version": "9.1.2",
       "depth": 1,
@@ -185,6 +192,13 @@
     "com.unity.mathematics": {
       "version": "1.2.6",
       "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

@@ -1,0 +1,4 @@
+index,board_width,board_height,number_of_block,level_time,one_star_time,two_star_time
+1,4,4,3,45,15,30
+2,5,4,4,45,15,30
+3,4,6,5,45,15,30
