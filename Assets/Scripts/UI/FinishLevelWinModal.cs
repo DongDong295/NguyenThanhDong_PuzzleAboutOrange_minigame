@@ -50,9 +50,9 @@ public class FinishLevelWinModal : Modal
             {
                 var index = levelManager.GetCurrentLevelIndex();
                 Pubsub.Publisher.Scope<GameplayScope>().Publish(new OnEnterLevel(levelData.LevelDataItems[index++]));
-            }
-            Pubsub.Publisher.Scope<UIScope>().Publish(
+                Pubsub.Publisher.Scope<UIScope>().Publish(
                 new CloseModalEvent());
+            }
         });
         await UniTask.CompletedTask;
     }
