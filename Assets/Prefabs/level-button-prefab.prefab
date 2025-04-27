@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8247275662652306229}
   - component: {fileID: 3909726194721311391}
   - component: {fileID: 2291363855412718429}
+  - component: {fileID: 7504832300411342970}
   m_Layer: 5
   m_Name: level-button-prefab
   m_TagString: Untagged
@@ -141,6 +142,18 @@ MonoBehaviour:
   _starIconHolder: {fileID: 3041552178559437819}
   _goldStarSprite: {fileID: 21300000, guid: 28516531e0bb9c84d8d69bc20f543a29, type: 3}
   _blackStarSprite: {fileID: 21300000, guid: e493d2f2b512fcb499f5bc302b9acfbc, type: 3}
+--- !u!114 &7504832300411342970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696579261600297477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d04bd3a36fd254a83723854b890550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2618480876091154303
 GameObject:
   m_ObjectHideFlags: 0

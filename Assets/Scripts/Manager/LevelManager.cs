@@ -25,12 +25,17 @@ public class LevelManager : MonoBehaviour, IManager
     private float _oneStarTime, _twoStarTime;
 
     [SerializeField] private float _inputDelay;
-    private bool _canMove = true;
+    private bool _canMove = false;
     private CancellationTokenSource _cts;
 
     private GameObject _board;
 
     private List<GameObject> _disposeList;
+
+    private Vector2 _startTouchPosition;
+    private Vector2 _endTouchPosition;
+    private bool _isSwiping;
+    private const float SWIPE_THRESHOLD = 50f;
 
     public async UniTask OnApplicationStart()
     {
@@ -73,6 +78,61 @@ public class LevelManager : MonoBehaviour, IManager
             if (Input.GetKeyDown(KeyCode.RightArrow)) Move(Vector2.right);
             if (Input.GetKeyDown(KeyCode.UpArrow)) Move(Vector2.up);
             if (Input.GetKeyDown(KeyCode.DownArrow)) Move(Vector2.down);
+            HandleSwipe();
+        }
+    }
+    private void HandleSwipe()
+    {
+#if UNITY_EDITOR
+        if (Input.GetMouseButtonDown(0))
+        {
+            _startTouchPosition = Input.mousePosition;
+            _isSwiping = true;
+        }
+        else if (Input.GetMouseButtonUp(0) && _isSwiping)
+        {
+            _endTouchPosition = Input.mousePosition;
+            DetectSwipeDirection();
+            _isSwiping = false;
+        }
+#else
+    if (Input.touchCount > 0)
+    {
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Began)
+        {
+            _startTouchPosition = touch.position;
+            _isSwiping = true;
+        }
+        else if (touch.phase == TouchPhase.Ended && _isSwiping)
+        {
+            _endTouchPosition = touch.position;
+            DetectSwipeDirection();
+            _isSwiping = false;
+        }
+    }
+#endif
+    }
+
+    private void DetectSwipeDirection()
+    {
+        Vector2 swipe = _endTouchPosition - _startTouchPosition;
+        if (swipe.magnitude < SWIPE_THRESHOLD)
+            return;
+
+        if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
+        {
+            if (swipe.x > 0)
+                Move(Vector2.right);
+            else
+                Move(Vector2.left);
+        }
+        else
+        {
+            if (swipe.y > 0)
+                Move(Vector2.up);
+            else
+                Move(Vector2.down);
         }
     }
 

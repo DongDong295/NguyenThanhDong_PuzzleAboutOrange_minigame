@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 778544975615037013}
   - component: {fileID: 7590628244838143852}
   - component: {fileID: 2171679854396948325}
+  - component: {fileID: 5214414368180651760}
   m_Layer: 5
   m_Name: replay-button
   m_TagString: Untagged
@@ -234,6 +235,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5214414368180651760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4377376966496192731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d04bd3a36fd254a83723854b890550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5674229616587192214
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +469,7 @@ GameObject:
   - component: {fileID: 5367970899719519145}
   - component: {fileID: 1595829442921300237}
   - component: {fileID: 7477656614281113968}
+  - component: {fileID: 7535236119477995712}
   m_Layer: 5
   m_Name: home-button
   m_TagString: Untagged
@@ -564,3 +578,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7535236119477995712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308596161514423074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d04bd3a36fd254a83723854b890550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

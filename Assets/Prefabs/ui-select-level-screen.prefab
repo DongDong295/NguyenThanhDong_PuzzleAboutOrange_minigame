@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 9172172327947060085}
   - component: {fileID: 8216136744245183410}
   - component: {fileID: 3274190333895234674}
+  - component: {fileID: 4360571812130485951}
   m_Layer: 5
   m_Name: back-button
   m_TagString: Untagged
@@ -210,6 +211,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4360571812130485951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269862564954651007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d04bd3a36fd254a83723854b890550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4638616041199534826
 GameObject:
   m_ObjectHideFlags: 0
